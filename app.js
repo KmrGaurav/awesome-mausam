@@ -1,4 +1,5 @@
-const geocode = require('./utils/geocode')
+const geocode  = require('./utils/geocode')
+const forecast = require('./utils/forecast')
 
 const args = process.argv
 const address = args[2]
@@ -13,6 +14,13 @@ geocode(address, (gError, { latitude, longitude, location } = {}) => {
     if(gError) {
         return console.log(gError)
     }
-    
-    console.log('Location: ', location)
+
+    forecast(latitude, longitude, (fError, forecastData) => {
+        if(fError) {
+            return console.log(fError)
+        }
+
+        console.log(location)
+        console.log(forecastData)
+    })
 })

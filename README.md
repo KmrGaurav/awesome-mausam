@@ -1,6 +1,8 @@
 # Awesome Mausam
 
-Awesome Mausam is a weather website. The application uses [Mapbox] API. (Currently gives only address and geographical coordinates.)
+Awesome Mausam is (going to be) a weather website that shows the weather data of someplace. The application uses [Mapbox] and [OpenWeatherMap] APIs.
+
+OpenWeatherMap provides global weather data using geographic coordinates of someplace. And Mapbox provides these coordinates using the name of that place.
 
 ---
 
@@ -39,14 +41,18 @@ If the installation was successful, you should be able to run the following comm
 
 ## Configure app
 
-Create a new file `.env` or rename `.env.example` to `.env` and put the Mapbox API.
+Create a new file `.env` or rename `.env.example` to `.env` and put the [Mapbox] and [OpenWeatherMap] APIs.
 
 ## Running the app
 
     $ npm run start Delhi
     Location: Delhi, India
+    Currently there is mist. It is currently 15.59 degrees out. Minimum Temperature: 14 degrees. Maximum Temperature: 17.22 degrees.
+    
     $ npm run start "New Delhi"
     Location: New Delhi, Delhi, India
+    Currently there is mist. It is currently 15.59 degrees out. Minimum Temperature: 14 degrees. Maximum Temperature: 17.22 degrees.
 
 [node.js]:        https://nodejs.org/         "Node.js"
 [mapbox]:         https://www.mapbox.com/     "Mapbox"
+[openweathermap]: https://openweathermap.org/ "OpenWeatherMap"
