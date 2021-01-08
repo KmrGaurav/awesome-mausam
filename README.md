@@ -1,6 +1,6 @@
 # Awesome Mausam
 
-Awesome Mausam is a weather website.
+Awesome Mausam is a weather website. The application uses [Mapbox] API. (Currently gives only address and geographical coordinates.)
 
 ---
 
@@ -37,8 +37,16 @@ If the installation was successful, you should be able to run the following comm
     cd awesome-mausam
     npm install
 
+## Configure app
+
+Create a new file `.env` or rename `.env.example` to `.env` and put the Mapbox API.
+
 ## Running the app
 
-    npm run start
+    $ npm run start Delhi
+    Location: Delhi, India
+    $ npm run start "New Delhi"
+    Location: New Delhi, Delhi, India
 
 [node.js]:        https://nodejs.org/         "Node.js"
+[mapbox]:         https://www.mapbox.com/     "Mapbox"
