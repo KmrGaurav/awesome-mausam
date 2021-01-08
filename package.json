@@ -1,0 +1,16 @@
+{
+  "name": "awesome-mausam",
+  "version": "1.0.0",
+  "description": "Weather website",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kumar Gaurav",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
