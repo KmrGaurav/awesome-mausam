@@ -2,10 +2,11 @@
   "name": "awesome-mausam",
   "version": "1.0.0",
   "description": "Weather website",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node -r dotenv/config app.js",
-    "dev": "nodemon app.js",
+    "start": "node src/app.js",
+    "dev": "nodemon -r dotenv/config src/app.js -e js",
+    "cmd": "env JUST_COMMAND_LINE=true node -r dotenv/config src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kumar Gaurav",
@@ -15,6 +16,7 @@
     "nodemon": "^2.0.7"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "request": "^2.88.2"
   }
 }
