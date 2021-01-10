@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon -r dotenv/config src/app.js -e js,hbs",
+    "debug": "node inspect src/app.js",
     "cmd": "env JUST_COMMAND_LINE=true node -r dotenv/config src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

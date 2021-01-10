@@ -6,11 +6,11 @@ const geocode = (address, callback) => {
 
     request({ url, json: true }, (error, {body}={}) => {
         if(error) {
-            callback('[Mapbox]: Unable to connect to location server.', undefined)
+            callback('Unable to connect to location server.', undefined)
         } else if(body.message) {
-            callback('[Mapbox]: Nothing provided to find or API is incorrect.', undefined)
+            callback('Nothing provided to find or API is incorrect.', undefined)
         } else if(body.features.length === 0) {
-            callback('[Mapbox]: Unable to find location. Search something else.', undefined)
+            callback('Unable to find location. Search something else.', undefined)
         } else {
             callback(undefined, {
                 latitude:  body.features[0].center[1],
