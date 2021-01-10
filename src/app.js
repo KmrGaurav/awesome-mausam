@@ -61,6 +61,29 @@ app.get('/about', (req, res) => {
     })
 })
 
+app.get('/weather', (req, res) => {
+    if(!req.query.address)
+        return res.send({message: "Plese provide a message"})
+    
+    geocode(req.query.address, (gError, { latitude, longitude, location } = {}) => {
+        if(gError) {
+            return res.send({error: gError})
+        }
+        
+        forecast(latitude, longitude, (fError, forecastData) => {
+            if(fError) {
+                return res.send({error: fError})
+            }
+            
+            res.send({
+                query: req.query.address,
+                location,
+                forecast: forecastData
+            })
+        })
+    })
+})
+
 app.get('*', (req, res) => {
     res.render('404', {
         title: 404,
