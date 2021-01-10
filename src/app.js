@@ -1,6 +1,7 @@
 const path = require('path')
 
 const express = require('express')
+const hbs     = require('hbs')
 
 const geocode  = require('./utils/geocode')
 const forecast = require('./utils/forecast')
@@ -36,22 +37,33 @@ if(process.env.JUST_COMMAND_LINE) {
 // ------------------------- Website stuff starts here -------------------------
 const app = express()
 
-app.set('view engine', 'hbs')
 const viewPath = path.join(__dirname, '../templates/views')
+const partialsPath = path.join(__dirname, '../templates/partials')
+
+app.set('view engine', 'hbs')
 app.set('views', viewPath)
+hbs.registerPartials(partialsPath)
 
 const publicDirectoryPath = path.join(__dirname, '../public')
 app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => {
     res.render('index', {
-
+        title: 'Awesome Mausam',
+        home: true
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
+        title: 'About',
+        about: true
+    })
+})
 
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: 404,
     })
 })
 
