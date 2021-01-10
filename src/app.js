@@ -36,8 +36,24 @@ if(process.env.JUST_COMMAND_LINE) {
 // ------------------------- Website stuff starts here -------------------------
 const app = express()
 
+app.set('view engine', 'hbs')
+const viewPath = path.join(__dirname, '../templates/views')
+app.set('views', viewPath)
+
 const publicDirectoryPath = path.join(__dirname, '../public')
 app.use(express.static(publicDirectoryPath))
+
+app.get('', (req, res) => {
+    res.render('index', {
+
+    })
+})
+
+app.get('/about', (req, res) => {
+    res.render('about', {
+
+    })
+})
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
