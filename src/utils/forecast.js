@@ -14,7 +14,15 @@ const forecast = ({latitude, longitude, units} = {}, callback) => {
         } else if(body.cod === 401) {
             callback('Invalid API key', undefined)
         } else {
-            callback(undefined, 'Currently there is ' + body.weather[0].description + '. It is currently ' + body.main.temp + ' degrees out. Minimum Temperature: ' + body.main.temp_min + ' degrees. Maximum Temperature: '  + body.main.temp_max + ' degrees.')
+            callback(undefined, {
+                description: body.weather[0].description,
+                temperature: body.main.temp,
+                minimumTemp: body.main.temp_min,
+                maximumTemp: body.main.temp_max,
+                pressure   : body.main.pressure,
+                humidity   : body.main.humidity,
+                windSpeed  : body.wind.speed
+            })
         }
     })
 }
