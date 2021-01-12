@@ -1,5 +1,7 @@
-const searchForm = document.querySelector('form')
-const search     = document.querySelector('input')
+const units = document.getElementsByName('setting-units')
+
+const searchForm  = document.querySelector('#search-form')
+const searchQuery = document.querySelector('#search-query')
 
 const title1    = document.querySelector('#title-1')
 const title2    = document.querySelector('#title-2')
@@ -9,8 +11,15 @@ const message2 = document.querySelector('#message-2')
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    const address = search.value
-    const url = `/weather?address=${address}`
+    const address = searchQuery.value
+    let unit
+    for(i = 0; i < units.length; i++) {
+        if(units[i].checked) {
+            unit = units[i].value
+        }
+    }
+
+    const url = `/weather?address=${address}&units=${unit}`
     fetch(url).then(response => {
         response.json().then(data => {
             if(data.error) {
@@ -29,3 +38,11 @@ searchForm.addEventListener('submit', (e) => {
         })
     })
 })
+
+const disappearInfo = () => {
+    $("#WeatherInfo").collapse('hide');
+}
+
+const toggleSettings = () => {
+    $("#Setting").collapse('toggle');
+}

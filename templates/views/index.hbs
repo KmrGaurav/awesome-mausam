@@ -4,26 +4,77 @@
 <body>
     <div class="container-fullwidth">
         {{>navbar}}
-        <div class="container">
-            <!-- Search bar -->
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Location" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-            <!-- Search bar -->
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-1">
+                    <i class="icon-cog icon-2x" onclick="toggleSettings()" type="button"></i>
+                </div>
+                <div class="col-11">
+                    <div class="">
+                        <div class="collapse" id="Setting">
+                            <div class="col-6">
+                                <div class="card bg-light mt-2">
+                                    <div class="card-body">
+                                        <fieldset class="form-group">
+                                            <div class="row">
+                                                <div class="offset-1">
+                                                    <legend>Units</legend>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="setting-units" id="units-standard-1" value="standard" checked>
+                                                        <label class="form-check-label" for="units-standard-1">
+                                                            Standard
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="setting-units" id="units-metric-2" value="metric">
+                                                        <label class="form-check-label" for="units-metric-2">
+                                                            Metric
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="setting-units" id="units-imperial-2" value="imperial">
+                                                        <label class="form-check-label" for="units-imperial-2">
+                                                            Imperial
+                                                        </label>
+                                                    </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>                   
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Search bar -->
+                        <form id="search-form">
+                            <div class="row mt-2">
+                                <div class="col-sm-5           px-1 my-1 my-sm-0">
+                                    <input id="search-query" class="form-control text-center" type="search" placeholder="Location" aria-label="Search">
+                                </div>
+                                <div class="col-sm-3 col-md-2  px-1 my-1 my-sm-0">
+                                    <button class="btn btn-block btn-outline-success" type="submit">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- Search bar -->
+                    </div>
+                </div>
+            </div>
             <!-- Weather Info Card -->
             <div class="collapse" id="WeatherInfo">
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <div>
-                            <span id="title-1" style="font-weight: bolder;"></span>
-                            <span id="message-1"></span>
+                <div class="card bg-light mt-2">
+                    <div class="row">
+                        <div id="message-parent" class="card-body">
+                            <button onclick="disappearInfo()" id="message-child" type="button" class="btn btn-danger">X</button>
+                            <div>
+                                <span id="title-1" style="font-weight: bolder;"></span>
+                                <span id="message-1"></span>
+                            </div>
+                            <div>
+                                <span id="title-2" style="font-weight: bolder;"></span>
+                                <span id="message-2"></span>
+                            </div>
                         </div>
-                        <div>
-                            <span id="title-2" style="font-weight: bolder;"></span>
-                            <span id="message-2"></span>
-                        </div>
-                    </div>
+                    </div>                    
                 </div>
             </div>
             <!-- Weather Info Card -->

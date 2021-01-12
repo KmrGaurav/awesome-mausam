@@ -12,3 +12,21 @@ body {
 .container-fullwidth {
     flex-grow: 1;
 }
+
+#message-parent {
+    position: relative;
+}
+
+#message-child {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+}
+
+/* .container {
+    position: static;
+} */
+
+/* #search-form {
+    position: absolute;
+} */
