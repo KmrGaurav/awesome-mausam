@@ -22,12 +22,12 @@ if(process.env.JUST_COMMAND_LINE) {
             return console.log(gError)
         }
         
-        forecast(latitude, longitude, (fError, forecastData) => {
+        forecast({latitude, longitude/*, units*/}, (fError, forecastData) => {
             if(fError) {
                 return console.log(fError)
             }
             
-            console.log(location)
+            console.log(`Location: ${location}`)
             console.log(forecastData)
         })
     })
