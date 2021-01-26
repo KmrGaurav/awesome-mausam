@@ -2,20 +2,29 @@
 <html lang="en">
 {{>meta}}
 <body>
-    <div class="container-fullwidth">
-        {{>navbar}}
-        <div class="container mt-5 text-center">
-            <p class="display-4 font-weight-bold">Hey, I'm <span style="white-space: nowrap;">Kumar Gaurav</span></p>
-            <p class="h4 font-weight-normal">creator of this site.</p>
-            <p class="h2 font-weight-normal">I created this site just for fun. And to list in my résumé.</p>
-            <hr class="mt-5 mb-5"/>
-            <div>
-                <a href="mailto:kmrgrv119@gmail.com"       type="button" class="btn btn-outline-info mx-1">E-mail</a>
-                <a href="https://github.com/KmrGaurav"     type="button" class="btn btn-outline-info mx-1" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/KrGv" type="button" class="btn btn-outline-info mx-1" target="_blank">LinkedIn</a>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="glass">
+        <div> {{!-- Added just to attach footer to bottom. --}}
+            {{>header}}
+            <div class="nut1"></div>
+            <div class="nut2"></div>
+            <div class="nut3"></div>
+            <div class="nut4"></div>
+            
+            <div class="about">
+                <h1 class="">Hey, I'm <span style="white-space: nowrap;">Kumar Gaurav</span></h1>
+                <h4>creator of this site.</h4>
+                <h2>I created this site just for fun. And to list in my résumé.</h2>
+                <hr class="hr">
+                <div>
+                    <a href="mailto:kmrgrv119@gmail.com"       type="button" class="about-link">E-mail</a>
+                    <a href="https://github.com/KmrGaurav"     type="button" class="about-link" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/KrGv" type="button" class="about-link" target="_blank">LinkedIn</a>
+                </div>
             </div>
         </div>
-    </div> <!-- Container Fullwidth -->
-    {{>footer}}
-    </body>
+        {{>footer}}
+    </div> <!-- glass -->
+</body>
 </html>

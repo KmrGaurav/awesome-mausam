@@ -54,7 +54,7 @@ searchForm.addEventListener('submit', (e) => {
             if(data.error) {
                 title1.textContent   = 'Error: '
                 message1.textContent = data.error
-                $("#WeatherInfo").collapse('show');
+                // $("#WeatherInfo").collapse('show');
             } else {
                 title1.textContent        = 'Location: '
                 message1.textContent      = data.location
@@ -72,7 +72,7 @@ searchForm.addEventListener('submit', (e) => {
                 humidity.textContent      = data.forecast.humidity
                 windSpeedTitle.textContent = "Wind Speed: "
                 windSpeed.textContent      = data.forecast.windSpeed + giveWindSpeedUnit(unit)
-                $("#WeatherInfo").collapse('show');
+                // $("#WeatherInfo").collapse('show');
             }
         })
     })

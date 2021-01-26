@@ -1,71 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 {{>meta}}
-<body>
-    <div class="container-fullwidth">
-        {{>navbar}}
-        <div class="container mt-3">
-            <div class="row">
-                <div class="col-1">
-                    <i class="icon-cog icon-2x" onclick="toggleSettings()" type="button"></i>
-                </div>
-                <div class="col-11">
-                    <div class="">
-                        <div class="collapse" id="Setting">
-                            <div class="col-6">
-                                <div class="card bg-light mt-2">
-                                    <div class="card-body">
-                                        <fieldset class="form-group">
-                                            <div class="row">
-                                                <div class="offset-1">
-                                                    <legend>Units</legend>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="setting-units" id="units-metric-2" value="metric" checked>
-                                                        <label class="form-check-label" for="units-metric-2">
-                                                            Metric
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="setting-units" id="units-imperial-2" value="imperial">
-                                                        <label class="form-check-label" for="units-imperial-2">
-                                                            Imperial
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="setting-units" id="units-standard-1" value="standard">
-                                                        <label class="form-check-label" for="units-standard-1">
-                                                            Standard
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                    </div>                   
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Search bar -->
-                        <form id="search-form">
-                            <div class="row mt-2">
-                                <div class="col-sm-5           px-1 my-1 my-sm-0">
-                                    <input id="search-query" class="form-control text-center" type="search" placeholder="Location" aria-label="Search">
-                                </div>
-                                <div class="col-sm-3 col-md-2  px-1 my-1 my-sm-0">
-                                    <button class="btn btn-block btn-outline-success" type="submit">Search</button>
-                                </div>
+<body>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="glass">
+        <div> {{!-- Added just to attach footer to bottom. --}}
+            {{>header}}
+            <main>
+                <div class="nut1"></div>
+                <div class="nut2"></div>
+                <div class="nut3"></div>
+                <div class="nut4"></div>
+
+                <input type="checkbox" class="setting-input" id="cog-id">
+                <label class="setting-icon-cog" for="cog-id">
+                    <i class="icon-cog icon-4x"></i>
+                </label>
+                <div class="content">
+                    <!-- Just to split from icon -->
+                    <div class="settings-collapse" id="Setting">
+                        <fieldset class="settings-form">
+                            <div>
+                                <legend>Units</legend>
                             </div>
-                        </form>
-                        <!-- Search bar -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="setting-units" id="units-metric-2"
+                                    value="metric" checked>
+                                <label class="form-check-label" for="units-metric-2">Metric</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="setting-units" id="units-imperial-2"
+                                    value="imperial">
+                                <label class="form-check-label" for="units-imperial-2">Imperial</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="setting-units" id="units-standard-1"
+                                    value="standard">
+                                <label class="form-check-label" for="units-standard-1">Standard</label>
+                            </div>
+                        </fieldset>
                     </div>
-                </div>
-            </div>
-            <!-- Weather Info Card -->
-            <div class="collapse" id="WeatherInfo">
-                <div class="card bg-light mt-2">
-                    <div class="row">
-                        <div id="message-parent" class="card-body">
-                            <button onclick="disappearInfo()" id="message-child" type="button" class="btn btn-danger">X</button>
+
+                    <!-- Search bar -->
+                    <form id="search-form" class="search-form">
+                        <input id="search-query" class="search-form-input" type="search" placeholder="Location" aria-label="Search">
+                        <button class="search-form-button">
+                            <i class="icon-search icon-2x search-form-icon" type="submit"></i>
+                        </button>
+                    </form>
+                    <!-- Search bar -->
+
+                    <!-- Weather Info Card -->
+                    {{!-- <div class="weather-info-collapse" id="WeatherInfo"> --}}
+                        {{!-- <a href="#" id="message-child" class="weather-info-close-button">&times;</a> --}}
+                        <div id="message-parent" class="weather-info">
                             <div>
                                 <span id="title-1" style="font-weight: bolder;"></span>
                                 <span id="message-1"></span>
@@ -95,20 +85,22 @@
                                     <span id="humidity-title" style="font-weight: bolder;"></span>
                                     <span id="humidity"></span>
                                 </div>
+                                <div>
                                     <span id="wind-speed-title" style="font-weight: bolder;"></span>
                                     <span id="wind-speed"></span>
                                 </div>
                             </div>
                         </div>
-                    </div>                    
-                </div>
-            </div>
-            <!-- Weather Info Card -->
-        </div> <!-- Container -->
-    </div> <!-- Container Fullwidth -->
-    {{>footer}}
-    
+                    {{!-- </div> <!-- Weather Info Card --> --}}
+
+                </div> <!-- Just to split from icon -->
+            </main> <!-- main -->
+        </div>
+        {{>footer}}
+    </div> <!-- glass -->
+
     <!-- Weather fetching script -->
     <script src="./js/main.js"></script>
 </body>
+
 </html>
